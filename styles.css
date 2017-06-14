@@ -38,3 +38,18 @@ html, body {
     transform-origin: 100%;
     transition: 0.1s all cubic-bezier(0.31, 1.17, 0.83, 1.07);
 }
+
+.clock__hand--second {
+    width: 125px;
+    height: 3px;
+}
+
+.clock__hand--minute {
+    width: 125px;
+}
+
+.clock__hand--hour {
+    width: 95px;
+    -webkit-transform-origin-x: calc(100% + 30px);
+    top: calc(50% + 35px);
+}
