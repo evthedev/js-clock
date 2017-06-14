@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+}
+
+.clock__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+.clock__body {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock__innerbody {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: goldenrod;
+}
+
+.clock__hand--second, .clock__hand--minute, .clock__hand--hour {
+    width: 125px;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    top: calc(50% + 5px);
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    transition: 0.1s all cubic-bezier(0.31, 1.17, 0.83, 1.07);
+}

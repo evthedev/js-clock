@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JS Clock</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+    </head>
+    <body>
+        <div class="clock__wrapper">
+            <div class="clock__body">
+                <div class="clock__innerbody">
+                    <div class="clock__hand--second">
+
+                    </div>
+                    <div class="clock__hand--minute">
+                        
+                    </div>
+                    <div class="clock__hand--hour">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        const secondHand = document.querySelector('.clock__hand--second');
+        const minuteHand = document.querySelector('.clock__hand--minute');
+        const hourHand = document.querySelector('.clock__hand--hour');
+
+        function setDate() {
+            const now = new Date();
+            
+            const seconds = now.getSeconds();
+            const secondsDeg = ((seconds / 60) * 360) + 90;
+            secondHand.style.transform = `rotate(${secondsDeg}deg)`;
+
+            const minutes = now.getMinutes();
+            const minutesDeg = ((minutes / 60) * 360) + 90;
+            minuteHand.style.transform = `rotate(${minutesDeg}deg)`;
+
+            const hours = now.getHours();
+            const hoursDeg = ((hours / 60) * 360) + 90;
+            hourHand.style.transform = `rotate(${hoursDeg}deg)`;
+            
+        }
+
+        setInterval(setDate, 1000);
+
+    </script>
+</html>
